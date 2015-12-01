@@ -8,7 +8,7 @@ This was one of the most intriguing projects I did at appAcademy.  It allowed me
 
 ## How to Use
 
-This project can be used by requiring 'sql_object.rb' in your project and having  Model classes that correspond to your database inherit SQLObject. Please see the example.rb and cats.sql included in this repository to see a sample of this functionality.
+IThis project can be used by requiring 'sql_object.rb' in your project and having Model classes that correspond to your database inherit SQLObject. Please see the example.rb and cats.sql included in this repository to see a sample of this functionality.
 
 ###Available Methods:
 
@@ -20,3 +20,4 @@ This project can be used by requiring 'sql_object.rb' in your project and having
 * SQLObject::where(params)
 * SQLObject::belongs_to
 * SQLObject::has_many
+* SQLObject::has_one_through
