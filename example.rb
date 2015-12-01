@@ -29,7 +29,3 @@ class House < SQLObject
 
   self.finalize!
 end
-
-Cat.finalize!
-Human.finalize!
-House.finalize!

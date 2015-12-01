@@ -47,6 +47,14 @@ class SQLObject
     self.parse_all(table)
   end
 
+  def self.first
+    self.all[0]
+  end
+
+  def self.last
+    self.all[-1]
+  end
+
   def self.parse_all(results)
     results.map do |result|
       self.new(result)
