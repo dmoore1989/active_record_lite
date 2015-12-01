@@ -36,12 +36,10 @@ class HasManyOptions < AssocOptions
 end
 
 module Associatable
-  # Phase IIIb
   def belongs_to(name, options = {})
-    options = BelongsToOptions.new(name, options)
-
+    self.assoc_options[name] = BelongsToOptions.new(name, options)
+    options = self.assoc_options[name]
     define_method(name) do
-      self.class.assoc_options[name] = options
       foreign_key = self.send(options.foreign_key)
       target_class = options.model_class
       target_class.where(options.primary_key => foreign_key.to_s).first
@@ -49,8 +47,8 @@ module Associatable
   end
 
   def has_many(name, options = {})
-    options = HasManyOptions.new(name, self, options)
-
+    self.assoc_options[name] = HasManyOptions.new(name, self, options)
+    options = self.assoc_options[name]
     define_method(name) do
       primary_key = self.send(options.primary_key)
       target_class = options.model_class
@@ -60,12 +58,13 @@ module Associatable
 
   def assoc_options
     @assoc_options ||= {}
+    @assoc_options
   end
 
-  # Remember to go back to 04_associatable to write ::assoc_options
 
   def has_one_through(name, through_name, source_name)
     define_method(name) do
+      byebug
       through_options = self.class.assoc_options[through_name]
       source_options = through_options.model_class.assoc_options[source_name]
       through_foreign = self.send(through_options.foreign_key)

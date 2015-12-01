@@ -6,7 +6,7 @@ require_relative 'associatable'
 class SQLObject
   extend Searchable
   extend Associatable
-  
+
   def self.columns
     table = DBConnection.execute2(<<-SQL)
     SELECT
@@ -24,7 +24,7 @@ class SQLObject
       end
 
       define_method("#{column}=") do |value|
-        attributes[column] =value
+        attributes[column] = value
       end
     end
   end
