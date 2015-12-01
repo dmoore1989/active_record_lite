@@ -6,6 +6,7 @@ require_relative 'associatable'
 class SQLObject
   extend Searchable
   extend Associatable
+  
   def self.columns
     table = DBConnection.execute2(<<-SQL)
     SELECT
