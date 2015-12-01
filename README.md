@@ -4,7 +4,7 @@ Active Record Lite is an ORM based off the functionality of Rails active record.
 
 ## Notes for Project
 
-This was one of the most intriguing projects I did at appAcademy.  It allowed me to see what goes on under the hood in Rails and some of the powerful functionality Ruby and other programming languages contain. Heavily used is Ruby's send (to allow the calling of attribute setters stored as strings) and the define_method which allows us to define (attribute getters and setters and the definition of associations).
+This was one of the most intriguing projects I did at appAcademy.  It allowed me to see what goes on under the hood in Rails and some of the powerful functionality Ruby and other programming languages contain. Heavily used is Ruby's send (to allow the calling of attribute setters stored as strings) and the define_method which allows us to define attribute getters and setters and the associations for the various models of our database.
 
 ## How to Use
 
